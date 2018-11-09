@@ -1,8 +1,41 @@
+html, body              {
+	height: 100%;
+	margin: 0;
+}
+nav                     {
+	background: #003300;
+	width: 20%;
+	float: left;
+	text-align: left;
+	vertical-align: middle;
+	color: white;
+}
+nav table tr th         {
+	border-style: solid;
+	border-color: white;
+	border: 2px;
+}
+nav table tr th b       {
+	font-size: 100%;
+}
 
-nav                     {background: #003300; width: 20%; float: left; text-align: left; vertical-align: middle; color: white;}
-nav table tr th         {border-style: solid; border-color: white; border: 2px;}
-nav table tr th b       {font-size: 1.60em;}
-
-.navicon                {color: white; font-size: 1.5em;}
-.navigation             {height: 100%; width: 15%;}
-.navtable               {height: 100%; width: 100%;}
+.navicon                {
+	color: white;
+	font-size: 100%;
+}
+.navigation             {
+	min-height: 100%;
+	width: 20%;
+	background-color: lime;
+}
+.navtable               {
+	height: 100%;
+	width: 100%;
+}
+.site-content           {
+	margin-left: 20%;
+}
+.nav-content            {
+	width: 100%;
+	min-height: 100%;
+}
