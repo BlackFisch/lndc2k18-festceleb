@@ -5,54 +5,13 @@
 body {
 	height: 100%;
     background-color: #666666;
-	/* padding-left: 20%; */
-    /* float: right; */
+    margin-left: auto;
+    margin-right: auto;
 }
-/* nav {
-    display: inline-block;
-	background: var(--nav-bg-color);
-	width: 20%;
-    min-height: 100%;
-	float: left;
-	text-align: center;
-	vertical-align: middle;
-	color: white;
-    border: 2px solid red;
-}
-nav table tr th {
-	border-style: solid;
-	border-color: white;
-	border: 2px;
-}
-nav table tr th b {
-	font-size: 100%;
-} */
-
-/* .navicon {
-	color: white;
-	font-size: 100%;
-    font-weight: 900!important;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.navigation {
-	min-height: 100%;
-	min-width: 20%;
-	background-color: lime;
-}
-.navtable {
-	min-height: 100%;
-    max-height: 100%;
-	width: 100%;
-    background: var(--nav-bg-color);
-} */
 .site-content {
-	margin-left: 21%;
+    float: right;
+    width: 75%;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
 }
-/* .nav-content {
-    padding: 0;
-    margin: 0;
-	min-width: 100%;
-	max-width: 100%;
-    height: 95vh;
-} */
