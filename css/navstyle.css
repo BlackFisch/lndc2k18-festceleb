@@ -1,33 +1,37 @@
-nav {
-    display: inline-block;
-	background: var(--nav-bg-color);
-	width: 20%;
-	float: left;
-	text-align: center;
-    height: 99vh;
-	/* vertical-align: middle;
-	color: white; */
-    border: 2px solid white;
-    margin-left: 10px;
-    margin-top: 5px; /*sync w/ site-content pls */
-    margin-bottom:10px;
+body {
+    margin: 0;
 }
-#navhead{
-    font-size: 190%;
-    font-weight: bolder;
-    text-align: center;
-    vertical-align: middle;
-    color: white;
-}
-#navtable{
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: auto;
-}
-/* #navicon{
-    font-size: 1.5em;
-    font-weight: 900;
-    text-align: center;
-    vertical-align: middle;
+    background-color: #156820;
     color: white;
-    margin-left: 50%;
-} */
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+}
+
+li a {
+    display: block;
+    color: #eee;
+    padding: 8px 16px;
+    text-decoration: none;
+    width: 100%;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #003300;
+    color: white;
+}
+
+.logo {
+    vertical-align: bottom;
+}

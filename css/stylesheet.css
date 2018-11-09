@@ -11,6 +11,12 @@ body {
     margin-top: 0px;
     /* move evrything down (content + nav) */
 }
+iframe {
+    width: 20%;
+    height: 100vh;
+    background-color: var(--nav-bg-color);
+    position: fixed;
+}
 .site-content {
     float: right;
     width: 75%;
