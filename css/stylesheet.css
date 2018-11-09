@@ -34,12 +34,14 @@ nav table tr th b {
 }
 .navtable {
 	height: 100%;
-	width: 100%; background: var(--nav-bg-color);
+	width: 100%;
+    background: var(--nav-bg-color);
 }
 .site-content {
 	margin-left: 20%;
 }
 .nav-content {
-	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
 	min-height: 100%;
 }
