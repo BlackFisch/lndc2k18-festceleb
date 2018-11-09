@@ -1,41 +1,45 @@
-html, body              {
+:root {
+    --nav-bg-color: #003300;
+}
+
+html, body {
 	height: 100%;
 	margin: 0;
 }
-nav                     {
-	background: #003300;
+nav {
+	background: var(--nav-bg-color);
 	width: 20%;
 	float: left;
 	text-align: left;
 	vertical-align: middle;
 	color: white;
 }
-nav table tr th         {
+nav table tr th {
 	border-style: solid;
 	border-color: white;
 	border: 2px;
 }
-nav table tr th b       {
+nav table tr th b {
 	font-size: 100%;
 }
 
-.navicon                {
+.navicon {
 	color: white;
 	font-size: 100%;
 }
-.navigation             {
+.navigation {
 	min-height: 100%;
 	width: 20%;
 	background-color: lime;
 }
-.navtable               {
+.navtable {
 	height: 100%;
-	width: 100%;
+	width: 100%; background: var(--nav-bg-color);
 }
-.site-content           {
+.site-content {
 	margin-left: 20%;
 }
-.nav-content            {
+.nav-content {
 	width: 100%;
 	min-height: 100%;
 }
