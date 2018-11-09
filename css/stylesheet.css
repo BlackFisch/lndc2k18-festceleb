@@ -15,3 +15,8 @@ body {
     margin-right: 2%;
     text-align: center;
 }
+#event-list{
+    width:80%;
+    margin-left:10%;
+    margin-right:15%;
+}
