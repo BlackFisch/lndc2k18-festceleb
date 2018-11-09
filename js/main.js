@@ -32,17 +32,16 @@ let indexLookup = {
 
 async function loadHome() {
     let data = [];
-    let events = await db.collection("events").get().then((querySnapshot) => {
+    await db.collection("events").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             if (doc.exists) {
-                console.log(true);
-                data[0]=(doc.data());
+                data.push(doc.data());
             }
         });
     });
-    console.log(data.length);
 
     let table = document.getElementById('event-list');
+    table.deleteRow(1);
     let entries = table.rows.length;
 
     data.forEach ((el, i) => {

@@ -32,6 +32,6 @@ async function addEvent(form) {
         MaxCommit: maxcommit,
         Committed: 0,
         Description: description,
-        Adress : adress
+        Adress: adress
     });
 }
