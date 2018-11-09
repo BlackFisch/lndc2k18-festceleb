@@ -15,13 +15,6 @@ db.settings({
   timestampsInSnapshots: true
 });
 
-// let toAdd = [
-//     ["80's Party", "Zwickau, Innenstadt", "Freitag, 16.11.2018", "20", "0", "NEIN"],
-//     ["Tom's Geburtstag", "Zwickau, Eckersbach", "Samstag, 10.11.2018", "3", "1", "JA"],
-//     ["Tekk", "Zwickau, Innenstadt", "Freitag, 9.11.2018", "10", "5", "JA"],
-//     ["Chillout", "Zwickau, Innenstadt", "Mitwoch, 14.11.2018", "5", "1", "NEIN"]
-// ];
-
 let indexLookup = {
     "Topic": 0,
     "Location": 1,
