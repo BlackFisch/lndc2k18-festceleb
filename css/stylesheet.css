@@ -7,7 +7,7 @@ body {
 	/* padding-left: 20%; */
     /* float: right; */
 }
-nav {
+/* nav {
     display: inline-block;
 	background: var(--nav-bg-color);
 	width: 20%;
@@ -25,7 +25,7 @@ nav table tr th {
 }
 nav table tr th b {
 	font-size: 100%;
-}
+} */
 
 /* .navicon {
 	color: white;
