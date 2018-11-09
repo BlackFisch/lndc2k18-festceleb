@@ -9,7 +9,7 @@
         <!-- <script src="js/frameworks/p5.js"></script>
         <script src="js/frameworks/p5.dom.js"></script> -->
         <!-- <script src="js/frameworks/jquery-3.3.1.min.js"></script> -->
-        <script src="js/main.js"></script>
+        <script src="../js/main.js"></script>
         </script>
     </head>
     <body>
@@ -17,7 +17,7 @@
             <section><iframe frameborder=0 scrolling="no" class="nav-content" src="nav.html"></iframe></section>
         </nav>
         <section class="site-content" id='content'>
-            <form>
+            <form action="addEvent()">
                 Thema der Party:<br>
                 <input type="text" name="topic"><br>
                 Beschreibung der Party:<br>
@@ -32,6 +32,7 @@
                 <input type="date" name="date"><br>
                 Zeit:<br>
                 <input type="time" name="time"><br>
+                <input type="submit" value="Absenden">
             </form>
         </section>
     </body>
