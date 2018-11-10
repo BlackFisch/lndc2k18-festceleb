@@ -11,30 +11,44 @@
         <!-- <script src="js/frameworks/jquery-3.3.1.min.js"></script> -->
         <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/cookie.js"></script>
         <script src="../js/sha512.js"></script>
         <script src="../js/login.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+        <script>
+        window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#070c27"
+            },
+            "button": {
+              "background": "#2d542c"
+            }
+          },
+          "theme": "classic",
+          "position": "bottom-right",
+          "content": {
+            "message": "Diese Website nutzt Cookies, um die bestmögliche Benutzererfahrung zu gewährleisten. \nWir geben keinerlei Nutzerdaten an Dritte weiter.",
+            "dismiss": "Ich mag Kekse",
+            "link": "Erfahre mehr über Cookies"
+          }
+        })});
         </script>
     </head>
     <body>
         <iframe frameborder=0 scrolling="no" class="nav-content" src="nav.html"></iframe>
 
         <section class="site-content" id='content'>
-            <form action="javascript:;" onsubmit="addEvent(this)">
-                <!-- Thema der Party:<br>
-                <input type="text" name="topic"><br>
-                Beschreibung der Party:<br>
-                <input type="text" name="description"><br>
-                Maximale Gästeanzahl:<br>
-                <input type="number" name="maxcommit"><br>
-                Straße und Hausnummer:<br>
-                <input type="text" name="adress"><br>
-                Ort:<br>
-                <input type="text" name="location"><br>
-                Datum:<br>
-                <input type="date" name="date"><br>
-                Zeit:<br>
-                <input type="time" name="time"><br>
-                <input type="submit" value="Absenden"> -->
+            <form action="javascript:;" onsubmit="performLogin(this)">
+                Username:<br>
+                <input type="text" name="user"><br><br>
+                Passwort:<br>
+                <input type="password" name="pass"><br>
+                <input type="submit" value="Absenden">
             </form>
         </section>
     </body>

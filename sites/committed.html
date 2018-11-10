@@ -9,7 +9,30 @@
         <!-- <script src="js/frameworks/p5.js"></script>
         <script src="js/frameworks/p5.dom.js"></script> -->
         <!-- <script src="js/frameworks/jquery-3.3.1.min.js"></script> -->
-        <!-- <script src="../js/main.js"></script> -->
+        <script src="../js/main.js"></script>
+        <script src="../js/cookie.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+        <script>
+        window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#070c27"
+            },
+            "button": {
+              "background": "#2d542c"
+            }
+          },
+          "theme": "classic",
+          "position": "bottom-right",
+          "content": {
+            "message": "Diese Website nutzt Cookies, um die bestmögliche Benutzererfahrung zu gewährleisten. \nWir geben keinerlei Nutzerdaten an Dritte weiter.",
+            "dismiss": "Ich mag Kekse",
+            "link": "Erfahre mehr über Cookies"
+          }
+        })});
         </script>
     </head>
     <body>
