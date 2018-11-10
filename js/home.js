@@ -13,10 +13,8 @@ async function loadHome() {
     await db.collection("events").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             if (doc.exists) {
-                console.log(doc.id);
                 let dat = doc.data();
                 dat["id"] = doc.id;
-                console.log(dat);
                 data.push(dat);
             }
         });
@@ -39,7 +37,6 @@ async function loadHome() {
         checkBox.setAttribute("type", "checkbox");
         checkBox.setAttribute("id", el.id);
         checkBox.setAttribute("disabled", true);
-        checkBox.setAttribute("class", "main-favorite");
         checkBox.addEventListener("click", (el) =>{addToFavorites(el)});
         row.insertCell(indexLookup.Favorites).appendChild(checkBox);
 
@@ -47,7 +44,6 @@ async function loadHome() {
     });
 
     let session = checkSession();
-    // let elements = document.getElementsByAttribute("type", "checkbox");
     let elements = document.querySelector("#event-list").querySelectorAll("input[type='checkbox']");
     for (e of elements) {
         e.disabled = !session;
@@ -72,7 +68,6 @@ async function loadHome() {
 }
 
 async function addToFavorites(el) {
-    console.log(el);
     let id = el.originalTarget.id;
     if (!checkSession()) return;
     let user = getCookie("user");
