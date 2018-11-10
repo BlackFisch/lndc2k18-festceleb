@@ -34,6 +34,7 @@ async function performLogin(form) {
             setCookie("sid",sid,2);
             setCookie("user",user,2);
             setCookie("userid",id,2);
+            alert("Sie wurden erfolgreich eingeloggt!");
         } else {
             alert("Password incorrect!");
         }
