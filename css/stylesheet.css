@@ -25,6 +25,7 @@ iframe {
     margin-right: auto;
     text-align: center;
     margin-top: 20px; /*sync w/nav pls*/
+    overflow-x:auto;
 }
 #event-list{
     width:80%;
