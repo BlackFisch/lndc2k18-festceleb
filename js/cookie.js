@@ -31,6 +31,8 @@ async function checkCookie() {
             if (doc.exists) {
                 if (!(doc.data().sid === sid)) {
                     setCookie("sid","",0);
+                    setCookie("user","",0);
+                    setCookie("userid","",0);
                 }
             }
         });
