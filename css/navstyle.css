@@ -7,13 +7,15 @@ ul {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: #070C27; /*Nav background*/
+    background-color: #03002e; /*Nav background*/
     color: white;
     position: fixed;
     height: 100%;
     overflow: hidden;
 }
-
+.navli{
+    padding: 5px;
+}
 li a {
     display: block;
     color: #eee;
@@ -22,13 +24,13 @@ li a {
     width: 100%;
 }
 
-li a.active {
-    background-color: #1A4F8A; /*highlight nav*/
+/* li a.active {
+    background-color: #1A4F8A;
     color: white;
-}
+} */
 
 li a:hover:not(.active) {
-    background-color: #1A4F8A;
+    background-color: #1A4F8A; /*highlight nav*/
     color: white;
 }
 

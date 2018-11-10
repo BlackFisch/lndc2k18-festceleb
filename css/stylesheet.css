@@ -1,11 +1,11 @@
 :root {
-    --nav-bg-color: #003300;
+    --nav-bg-color: #03002e;
 }
 
 body {
 	height: 100vh;
     width=device-width;
-    background-color:  #2d542c; /*content background  */
+    background-color:  #ccc; /*content background  */
     margin-left: auto;
     margin-right: auto;
     margin-top: 0px;
@@ -19,7 +19,7 @@ iframe {
 }
 .site-content {
     float: right;
-    color: white;
+    color: 000000;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -44,5 +44,5 @@ iframe {
 h1{
     font-size: 200%;
     font-weight: 900;
-    color: #070C27;
+    color: #000000;
 }
