@@ -5,7 +5,7 @@
 body {
 	height: 100vh;
     width=device-width;
-    background-color: #8680db;
+    background-color: #3F763E; /*content background  */
     margin-left: auto;
     margin-right: auto;
     margin-top: 0px;
@@ -19,7 +19,7 @@ iframe {
 }
 .site-content {
     float: right;
-    width: 75%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -29,4 +29,9 @@ iframe {
     width:80%;
     margin-left:10%;
     margin-right:15%;
+}
+h1{
+    font-size: 200%;
+    font-weight: 900;
+    color: #070C27;
 }

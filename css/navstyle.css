@@ -7,7 +7,7 @@ ul {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: #156820;
+    background-color: #070C27; /*Nav background*/
     color: white;
     position: fixed;
     height: 100%;
@@ -23,12 +23,12 @@ li a {
 }
 
 li a.active {
-    background-color: #4CAF50;
+    background-color: #1A4F8A; /*highlight nav*/
     color: white;
 }
 
 li a:hover:not(.active) {
-    background-color: #003300;
+    background-color: #1A4F8A;
     color: white;
 }
 
