@@ -47,3 +47,10 @@ h1{
     font-weight: 900;
     color: #000000;
 }
+body section table tr th{
+    background-color:  #070066;
+    color: white;
+}
+body section table tr:nth-child(even) {background-color: #f2f2f2;}
+body section table tr:nth-child(odd) {background-color: #bbbbbb;}
+body section table tr:hover {background-color: #080080; color: white;}
