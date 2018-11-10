@@ -38,7 +38,7 @@ async function loadHome() {
         row.insertCell(indexLookup.Favorites).appendChild(checkBox);
         elements.push(checkBox);
 
-        row.insertCell(indexLookup.ID).innerHTML ="<a href='detailview.html?id=" + el.id + "' target='_top'>" + el.id + "</a>";
+        row.insertCell(indexLookup.ID).innerHTML ="<a href='sites/detailview.html?id=" + el.id + "' target='_top'>" + el.id + "</a>";
     });
 
     let session = checkSession();
