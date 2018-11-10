@@ -13,7 +13,9 @@ ul {
     height: 100%;
     overflow: hidden;
 }
-
+.navli{
+    padding: 5px;
+}
 li a {
     display: block;
     color: #eee;
