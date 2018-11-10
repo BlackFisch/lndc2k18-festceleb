@@ -24,7 +24,7 @@ iframe {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    margin-top: 5px; /*sync w/nav pls*/
+    margin-top: 20px; /*sync w/nav pls*/
 }
 #event-list{
     width:80%;
@@ -39,7 +39,8 @@ iframe {
     margin-right: auto;
 }
 .inputtype{
-    text-align: right;
+    float: right;
+    width: 50%;
 }
 h1{
     font-size: 200%;
