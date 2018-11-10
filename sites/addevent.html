@@ -16,23 +16,23 @@
     </head>
     <body>
         <iframe frameborder=0 scrolling="no" class="nav-content" src="nav.html"></iframe>
-        
+
         <section class="site-content" id='content'>
-            <form action="javascript:;" onsubmit="addEvent(this)">
-                Thema der Party:<br>
-                <input type="text" name="topic"><br>
-                Beschreibung der Party:<br>
-                <input type="text" name="description"><br>
-                Maximale Gästeanzahl:<br>
-                <input type="number" name="maxcommit"><br>
-                Straße und Hausnummer:<br>
-                <input type="text" name="adress"><br>
-                Ort:<br>
-                <input type="text" name="location"><br>
-                Datum:<br>
-                <input type="date" name="date"><br>
-                Zeit:<br>
-                <input type="time" name="time"><br>
+            <form id="addeventform"action="javascript:;" onsubmit="addEvent(this)">
+                Thema der Party:
+                <input class="inputtype" type="text" name="topic"><br>
+                Beschreibung der Party:
+                <input class="inputtype" type="text" name="description"><br>
+                Maximale Gästeanzahl:
+                <input class="inputtype" type="number" name="maxcommit"><br>
+                Straße und Hausnummer:
+                <input class="inputtype" type="text" name="adress"><br>
+                Ort:
+                <input class="inputtype" type="text" name="location"><br>
+                Datum:
+                <input class="inputtype" type="date" name="date"><br>
+                Zeit:
+                <input class="inputtype" type="time" name="time"><br>
                 <input type="submit" value="Absenden">
             </form>
         </section>

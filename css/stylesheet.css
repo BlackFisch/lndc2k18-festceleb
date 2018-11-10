@@ -31,6 +31,16 @@ iframe {
     margin-left:10%;
     margin-right:15%;
 }
+#addeventform{
+    width: 33%;
+    vertical-align: middle;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+.inputtype{
+    text-align: right;
+}
 h1{
     font-size: 200%;
     font-weight: 900;
