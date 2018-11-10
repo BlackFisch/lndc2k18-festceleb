@@ -8,8 +8,13 @@
         <!--
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script> -->
         <!-- <script src="../js/main.js"></script> -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/nav.js"></script>
+        <script src="../js/cookie.js"></script>
     </head>
-    <body>
+    <body onLoad="loadNavigation()">
         <ul>
             <li class="logo"><div align='center'><img src='../images/logo.png' alt="FestCeleb Logo" width="100%"/></div></li>
              <li class="navli"><a class="navicon fas fa-home" id="nav-home" href='../index.html' target='_top'>&nbsp;HOME</a></li>
@@ -17,7 +22,7 @@
              <li class="navli"><a class="navicon fas fa-star" id="nav-favorites" href='favourites.html' target='_top'>&nbsp;FAVORITEN</a></li>
              <li class="navli"><a class="navicon fas fa-check" id="nav-committed" href='committed.html' target='_top'>&nbsp;ZUGESAGT</a></li>
              <li class="navli"><a class="navicon fas fa-id-card" id="nav-about" href='about.html' target='_top'>&nbsp;ÜBER UNS</a></li>
-             <li class="navli"><a class="navicon fas fa-sign-in-alt" id="nav-login" href='login.html' target='_top'>&nbsp;LOGIN</a></li>
+             <li class="navli"><a class="navicon fas fa-sign-in-alt" id="nav-login" href='login.html?ref=login' target='_top'>&nbsp;LOGIN</a></li>
         </ul>
     </body>
 </html>

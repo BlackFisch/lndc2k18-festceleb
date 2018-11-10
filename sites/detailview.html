@@ -13,8 +13,7 @@
         <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
         <script src="../js/main.js"></script>
         <script src="../js/cookie.js"></script>
-        <script src="../js/home.js"></script>
-        <script src="../js/favourites.js"></script>
+        <script src="../js/detail.js"></script>
 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
@@ -39,24 +38,43 @@
         })});
         </script>
     </head>
-    <body onLoad="loadFavourites()">
+    <body onLoad="loadDetails()">
         <iframe frameborder=0 scrolling="no" class="nav-content" src="nav.html"></iframe>
 
         <section class="site-content" id='content'>
-            <table id="event-list">
+            <h2>Detailansicht</h2>
+            <table id="event-list" border=1>
                 <tr>
-                    <th>Thema</th>
-                    <th>Ort</th>
-                    <th>Datum</th>
-                    <th>Max. Gäste</th>
-                    <th>Zusagen</th>
-                    <th>Favorit</th>
-                    <th>ID</th>
+                    <td colspan=2>Daten werden geladen...</td>
                 </tr>
                 <tr>
-                    <td colspan=7>Daten werden geladen...</td>
+                    <td>Thema: </td>
+                    <td id="topic"></td>
+                </tr>
+                <tr>
+                    <td>Beschreibung: </td>
+                    <td id="description"></td>
+                </tr>
+                <tr>
+                    <td>Maximale Teilnehmer: </td>
+                    <td id="MaxCommit"></td>
+                </tr>
+                <tr>
+                    <td>Zusagen: </td>
+                    <td id="committed"></td>
+                </tr>
+                <tr>
+                    <td>Datum und Uhrzeit: </td>
+                    <td id="datetime"></td>
+                </tr>
+                <tr>
+                    <td>Adresse: </td>
+                    <td id="adress"></td>
                 </tr>
             </table>
+
+             <button type="button" id="commit" onclick="addCommit()" disabled></button> 
+
         </section>
     </body>
 

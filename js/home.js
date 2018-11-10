@@ -1,13 +1,3 @@
-let indexLookup = {
-    "Topic": 0,
-    "Location": 1,
-    "Date": 2,
-    "MaxCommit": 3,
-    "Committed": 4,
-    "Favorites": 5,
-    "ID": 6
-};
-
 async function loadHome() {
     let data = [];
     await db.collection("events").get().then((querySnapshot) => {
@@ -22,16 +12,23 @@ async function loadHome() {
 
     let table = document.getElementById('event-list');
     table.deleteRow(1);
+
+    let elements = [];
     let entries = table.rows.length;
-
-    data.forEach ((el, i) => {
+    await data.forEach (async (el, i) => {
         let row = table.insertRow(entries+i);
+        let commits = 0;
+        await db.collection("commits").doc(el.id).get().then((doc) => {
+            if (doc.exists) {
+                commits = doc.data().users.length;
+            }
+        });
 
-        row.insertCell(indexLookup.Topic).innerHTML = el.Topic;
+        row.insertCell(indexLookup.Topic).innerHTML = "<a href='sites/detailview.html?id=" + el.id + "' target='_top'>" + el.Topic + "</a>";
         row.insertCell(indexLookup.Location).innerHTML = el.Location;
         row.insertCell(indexLookup.Date).innerHTML = unixToDate(el.Date.seconds);
         row.insertCell(indexLookup.MaxCommit).innerHTML = el.MaxCommit;
-        row.insertCell(indexLookup.Committed).innerHTML = el.Committed;
+        row.insertCell(indexLookup.Committed).innerHTML = commits;
 
         let checkBox = document.createElement("INPUT");
         checkBox.setAttribute("type", "checkbox");
@@ -39,15 +36,12 @@ async function loadHome() {
         checkBox.setAttribute("disabled", true);
         checkBox.addEventListener("click", (el) =>{addToFavorites(el)});
         row.insertCell(indexLookup.Favorites).appendChild(checkBox);
+        elements.push(checkBox);
 
-        row.insertCell(indexLookup.ID).innerHTML = el.id;
+        row.insertCell(indexLookup.ID).innerHTML ="<a href='detailview.html?id=" + el.id + "' target='_top'>" + el.id + "</a>";
     });
 
     let session = checkSession();
-    let elements = document.querySelector("#event-list").querySelectorAll("input[type='checkbox']");
-    for (e of elements) {
-        e.disabled = !session;
-    }
 
     if (session) {
         let user = getCookie("user");
@@ -62,7 +56,8 @@ async function loadHome() {
         });
         for (e of elements) {
             let elid = e.getAttribute("id");
-            e.checked = fav.find(x => x == elid);
+            e.checked = fav.includes(elid);
+            e.disabled = false;
         }
     }
 }

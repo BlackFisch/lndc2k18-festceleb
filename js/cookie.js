@@ -23,6 +23,12 @@ function getCookie(cname) {
     return "";
 }
 
+function resetCookies() {
+    setCookie("sid","",0);
+    setCookie("user","",0);
+    setCookie("userid","",0);
+}
+
 async function checkCookie() {
     let sid = getCookie("sid");
     let user = getCookie("user");
@@ -30,9 +36,7 @@ async function checkCookie() {
         querySnapshot.forEach(function(doc) {
             if (doc.exists) {
                 if (!(doc.data().sid === sid)) {
-                    setCookie("sid","",0);
-                    setCookie("user","",0);
-                    setCookie("userid","",0);
+                    resetCookies();
                 }
             }
         });

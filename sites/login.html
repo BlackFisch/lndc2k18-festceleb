@@ -39,7 +39,7 @@
         })});
         </script>
     </head>
-    <body>
+    <body onLoad="loadLogin()">
         <iframe frameborder=0 scrolling="no" class="nav-content" src="nav.html"></iframe>
 
         <section class="site-content" id='content'>
@@ -50,6 +50,7 @@
                 <input type="password" name="pass"><br>
                 <input type="submit" value="Absenden">
             </form>
+            <p id="status"></p>
         </section>
     </body>
 

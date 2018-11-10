@@ -9,8 +9,12 @@
         <!-- <script src="js/frameworks/p5.js"></script>
         <script src="js/frameworks/p5.dom.js"></script> -->
         <!-- <script src="js/frameworks/jquery-3.3.1.min.js"></script> -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
         <script src="../js/main.js"></script>
         <script src="../js/cookie.js"></script>
+        <script src="../js/home.js"></script>
+        <script src="../js/committed.js"></script>
 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
@@ -35,11 +39,24 @@
         })});
         </script>
     </head>
-    <body>
+    <body onLoad="loadCommitted()">
         <iframe frameborder=0 scrolling="no" class="nav-content" src="nav.html"></iframe>
 
         <section class="site-content" id='content'>
-            Test
+            <table id="event-list">
+                <tr>
+                    <th>Thema</th>
+                    <th>Ort</th>
+                    <th>Datum</th>
+                    <th>Max. Gäste</th>
+                    <th>Zusagen</th>
+                    <th>Favorit</th>
+                    <th>ID</th>
+                </tr>
+                <tr>
+                    <td colspan=7>Daten werden geladen...</td>
+                </tr>
+            </table>
         </section>
     </body>
 

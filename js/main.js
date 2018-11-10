@@ -1,3 +1,22 @@
+let indexLookup = {
+    "Topic": 0,
+    "Location": 1,
+    "Date": 2,
+    "MaxCommit": 3,
+    "Committed": 4,
+    "Favorites": 5,
+    "ID": 6
+};
+
+//Source: https://html-online.com/articles/get-url-parameters-javascript/
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
 // Initialize Google Firebase
 let config = {
   apiKey: "AIzaSyD7wsK1M0rIGRPV3Zdh5yXVkfu2N_gKmbk",
