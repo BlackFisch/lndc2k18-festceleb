@@ -22,3 +22,27 @@ function getCookie(cname) {
     }
     return "";
 }
+
+async function checkCookie() {
+    let sid = getCookie("sid");
+    let user = getCookie("user");
+    await db.collection("user").where("name", "==", user).get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            if (doc.exists) {
+                if (!(doc.data().sid === sid)) {
+                    setCookie("sid","",0);
+                }
+            }
+        });
+    }).catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+}
+
+function checkSession() {
+    checkCookie();
+    let sid = getCookie("sid");
+    let user = getCookie("user");
+
+    return !(sid === "" || user === "");
+}

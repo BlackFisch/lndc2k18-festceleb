@@ -18,3 +18,8 @@ async function addEvent(form) {
         Adress: adress
     });
 }
+function initEventAdd() {
+    let btn = document.getElementById("submitBtn");
+    let valid = checkSession();
+    btn.disabled = !valid;
+}

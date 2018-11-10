@@ -38,7 +38,7 @@
         })});
         </script>
     </head>
-    <body>
+    <body onLoad="initEventAdd()">
         <iframe frameborder=0 scrolling="no" class="nav-content" src="nav.html"></iframe>
 
         <section class="site-content" id='content'>
@@ -56,8 +56,8 @@
                 Datum:
                 <input class="inputtype" type="date" name="date"><br>
                 Zeit:
-                <input class="inputtype" type="time" name="time"><br>
-                <input type="submit" value="Absenden">
+                <input class="inputtype" type="time" name="time"><br><br>
+                <input type="submit" id="submitBtn" value="Absenden" disabled>
             </form>
         </section>
     </body>

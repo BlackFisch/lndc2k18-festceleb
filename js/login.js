@@ -32,6 +32,7 @@ async function performLogin(form) {
                 sid: sid
             }, { merge: true });
             setCookie("sid",sid,2);
+            setCookie("user",user,2);
         } else {
             alert("Password incorrect!");
         }
