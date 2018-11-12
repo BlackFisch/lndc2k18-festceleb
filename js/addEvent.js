@@ -31,6 +31,8 @@ async function addEvent(form) {
     form.date.value = "";
     form.time.value = "";
 
+    let userid = getCookie("userid");
+
     await db.collection("events").doc().set({
         Topic: topic,
         Location: location,
@@ -38,7 +40,8 @@ async function addEvent(form) {
         MaxCommit: maxcommit,
         Committed: 0,
         Description: description,
-        Adress: adress
+        Adress: adress,
+        Owner: userid
     });
 }
 function initEventAdd() {

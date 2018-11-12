@@ -34,20 +34,27 @@ async function loadDetails() {
     } else {
         btn.innerHTML = "Zusagen";
     }
-    btn.disabled = (!checkSession() || (data.MaxCommit >= commitnum));
+
+    let user = "";
+    await db.collection("user").doc(data.Owner).get().then((doc) => {
+        if (doc.exists) {
+            user = doc.data().name;
+        }
+    });
+
+    let isEventOwner = (data.Owner === getCookie("userid"));
+    btn.disabled = (!checkSession() || (commitnum >= data.MaxCommit) || isEventOwner);
 
     document.getElementById('topic').innerHTML = data.Topic;
     document.getElementById('description').innerHTML = data.Description;
     document.getElementById('MaxCommit').innerHTML = data.MaxCommit;
+    document.getElementById('owner').innerHTML = user;
     document.getElementById('committed').innerHTML = commitnum;
-    if (committed) {
+    if (committed || isEventOwner) {
         document.getElementById('datetime').innerHTML = unixToDateTime(data.Date.seconds);
-    } else {
-        document.getElementById('datetime').innerHTML = unixToDate(data.Date.seconds) + " [genaue Zeit versteckt]";
-    }
-    if (committed) {
         document.getElementById('adress').innerHTML = data.Adress;
     } else {
+        document.getElementById('datetime').innerHTML = unixToDate(data.Date.seconds) + " [genaue Zeit versteckt]";
         document.getElementById('adress').innerHTML = "[genaue Adresse versteckt] " + data.Location;
     }
 }
@@ -68,15 +75,21 @@ async function addCommit() {
     });
 
     let maxCommits = 0;
+    let owner = "";
     await db.collection("events").doc(id).get().then((doc) => {
         if (doc.exists) {
             maxCommits = doc.data().MaxCommit;
+            owner = doc.data().Owner;
         }
     });
 
     if (btn.innerHTML === "Zusagen") {
         if (commits >= maxCommits) {
             alert("Die maximale Anzahl Zusagen wurde erreicht!");
+            return;
+        }
+        if (owner === getCookie("userid")) {
+            alert("Sie können nicht ihrer eigenen Veranstaltung zusagen!");
             return;
         }
         commits.push(userid);
