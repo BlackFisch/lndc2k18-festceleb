@@ -5,7 +5,6 @@ async function loadDetails() {
     let data = {};
     await db.collection("events").doc(key).get().then((doc) => {
         if (doc.exists) {
-            console.log(doc.data());
             data = doc.data();
         }
     });
@@ -22,20 +21,20 @@ async function loadDetails() {
     });
     let committed = session && (commits.includes(getCookie("userid")));
 
-    let btn = document.getElementById("commit");
-    if (committed) {
-        btn.innerHTML = "Absagen";
-    } else {
-        btn.innerHTML = "Zusagen";
-    }
-    btn.disabled = !checkSession();
-
     let commitnum = 0;
     await db.collection("commits").doc(key).get().then((doc) => {
         if (doc.exists) {
             commitnum = doc.data().users.length;
         }
     });
+
+    let btn = document.getElementById("commit");
+    if (committed) {
+        btn.innerHTML = "Absagen";
+    } else {
+        btn.innerHTML = "Zusagen";
+    }
+    btn.disabled = (!checkSession() || (data.MaxCommit >= commitnum));
 
     document.getElementById('topic').innerHTML = data.Topic;
     document.getElementById('description').innerHTML = data.Description;
@@ -68,7 +67,18 @@ async function addCommit() {
         }
     });
 
+    let maxCommits = 0;
+    await db.collection("events").doc(id).get().then((doc) => {
+        if (doc.exists) {
+            maxCommits = doc.data().MaxCommit;
+        }
+    });
+
     if (btn.innerHTML === "Zusagen") {
+        if (commits >= maxCommits) {
+            alert("Die maximale Anzahl Zusagen wurde erreicht!");
+            return;
+        }
         commits.push(userid);
     } else {
         commits.pop(userid);
