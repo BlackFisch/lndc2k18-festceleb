@@ -19,10 +19,10 @@ Der Datenverkehr läuft über asymmetrische Verschlüsselung ab.
 Passwörter werden mithilfe von SHA-512 und Salt sicher abgespeichert. Das Passwort wird zu keinen Zeitpunkt ungehasht übertragen.
 
 
-Zum Testen kann der Benutzername "test" mit dem Passwort "test" (ohne ") verwendet werden.
+Zum Ausprobieren in der Online-Demo kann der Benutzername `test` mit dem Passwort `test` verwendet werden.
 
 Bei Anfragen, Anregungen und Vorschlägen:
 
-stevenkurzmanowski@googlemail.com
+[festceleb@outlook.com](mailto:festceleb@outlook.com)
 
 --------------------------------------------------------------------------------
